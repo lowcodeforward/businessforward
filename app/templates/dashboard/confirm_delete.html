@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Remover recurso · Gateway{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-6">
+    <div class="card border-danger">
+      <div class="card-body">
+        <h2 class="card-title text-danger">Excluir recurso</h2>
+        <p>Tem certeza de que deseja remover o recurso <strong>{{ resource.name }}</strong>?</p>
+        <p class="text-muted mb-4">Esta ação não poderá ser desfeita.</p>
+        <form method="post" class="d-flex gap-2 justify-content-end">
+          <a class="btn btn-outline-secondary" href="{{ url_for('dashboard.index') }}">Cancelar</a>
+          <button type="submit" class="btn btn-danger">Excluir</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

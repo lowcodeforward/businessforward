@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}Painel · Gateway{% endblock %}
+{% block content %}
+<div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+  <h1 class="h3 mb-0">Recursos do Gateway</h1>
+  <a class="btn btn-primary" href="{{ url_for('dashboard.create_resource') }}">Novo recurso</a>
+</div>
+<form class="mb-3" method="get">
+  <div class="input-group">
+    <input
+      type="search"
+      class="form-control"
+      name="q"
+      placeholder="Buscar por nome, URL ou descrição"
+      value="{{ search }}"
+    />
+    <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+  </div>
+</form>
+{% if resources %}
+<div class="table-responsive">
+  <table class="table table-hover align-middle">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>URL</th>
+        <th>Descrição</th>
+        <th>Status</th>
+        <th class="text-end">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for resource in resources %}
+      <tr>
+        <td>{{ resource.name }}</td>
+        <td><a href="{{ resource.url }}" target="_blank" rel="noopener">{{ resource.url }}</a></td>
+        <td>{{ resource.description or '-' }}</td>
+        <td>
+          {% if resource.is_active %}
+          <span class="badge text-bg-success">Ativo</span>
+          {% else %}
+          <span class="badge text-bg-secondary">Inativo</span>
+          {% endif %}
+        </td>
+        <td class="text-end">
+          <a class="btn btn-sm btn-outline-primary" href="{{ url_for('dashboard.edit_resource', resource_id=resource.id) }}"
+            >Editar</a
+          >
+          <a class="btn btn-sm btn-outline-danger" href="{{ url_for('dashboard.delete_resource', resource_id=resource.id) }}"
+            >Excluir</a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<div class="text-center py-5">
+  <p class="lead">Nenhum recurso cadastrado ainda.</p>
+  <a class="btn btn-primary" href="{{ url_for('dashboard.create_resource') }}">Cadastrar primeiro recurso</a>
+</div>
+{% endif %}
+{% endblock %}

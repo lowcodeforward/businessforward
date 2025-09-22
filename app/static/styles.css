@@ -1,0 +1,18 @@
+body {
+  background-color: #f5f7fb;
+}
+
+.card {
+  border: none;
+  border-radius: 0.75rem;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Entrar · Gateway{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6 col-lg-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h2 class="card-title mb-4 text-center">Entrar</h2>
+        <form method="post">
+          <div class="mb-3">
+            <label class="form-label" for="email">E-mail</label>
+            <input
+              class="form-control"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="usuario@exemplo.com"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="password">Senha</label>
+            <input class="form-control" type="password" id="password" name="password" required />
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Acessar</button>
+        </form>
+        <p class="mt-3 mb-0 text-center">
+          Ainda não tem conta?
+          <a href="{{ url_for('auth.register') }}">Cadastre-se aqui</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
