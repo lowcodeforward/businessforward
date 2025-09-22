@@ -1,0 +1,103 @@
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: #1f2933;
+  background-color: #f1f5f9;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #f1f5f9;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+main {
+  padding: 2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f8fafc;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-weight: 600;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+input,
+select,
+textarea {
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.primary-button {
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  background-color: #1d4ed8;
+}
+
+.secondary-button {
+  background: #fff;
+  border: 1px solid #2563eb;
+  color: #2563eb;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.secondary-button:hover {
+  background: #eff6ff;
+}
+
+.error-message {
+  color: #dc2626;
+  margin-bottom: 1rem;
+}
